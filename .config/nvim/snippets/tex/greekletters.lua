@@ -292,6 +292,20 @@ return {
 		{ condition = in_mathzone }
 	),
 	s(
+		{
+			trig = "Tau",
+			name = "Tau",
+			snippetType = "autosnippet",
+			condition = in_mathzone,
+		},
+		fmta(
+			[[
+    \tau 
+    ]],
+			{}
+		)
+	),
+	s(
 		{ trig = "tau", name = "Tau", snippetType = "autosnippet" },
 		fmta(
 			[[

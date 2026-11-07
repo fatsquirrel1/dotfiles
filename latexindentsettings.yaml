@@ -242,10 +242,10 @@ lookForAlignDelims:
 #       \end{itemize}
 # then populate indentAfterItems. See also itemNames
 indentAfterItems:
-  itemize: 1
-  itemize*: 1
-  enumerate: 1
-  enumerate*: 1
+  itemize: 0
+  itemize*: 0
+  enumerate: 0
+  enumerate*: 0
   description: 1
   description*: 1
   list: 1
@@ -311,7 +311,7 @@ indentAfterHeadings:
     level: 7
 
 # maximum indentation, off by default
-maximumIndentation: -1
+maximumIndentation: 4
 
 # if you don't want to have additional indentation
 # in a code block, then add it to noAdditionalIndent; note that

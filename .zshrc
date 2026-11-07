@@ -113,5 +113,6 @@ alias update="sudo dnf upgrade --skip-unavailable"
 alias c="clear"
 alias add="git add . && git status"
 alias com="git commit -m 'express commit'"
+alias commit="git commit"
 alias push="git push"
 source $ZSH/aliases.zsh
