@@ -684,6 +684,22 @@ return {
 	),
 	s(
 		{
+			trig = "TT",
+			name = "Transpose",
+			wordTrig = false,
+			regTrig = false,
+			snippetType = "autosnippet",
+			condition = in_mathzone,
+		},
+		fmta(
+			[[
+  ^\top 
+  ]],
+			{}
+		)
+	),
+	s(
+		{
 			trig = "%-%-",
 			name = "Inverse Superscript",
 			wordTrig = false,

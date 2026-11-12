@@ -11,6 +11,7 @@ return {
 				split_width = 30,
 			}
 
+			vim.g.vimtex_view_automatic = 0 -- disable automatic view upon compilation
 			vim.g.vimtex_indent_enabled = 0 -- disable because latexindent is used
 			vim.g.vimtex_indent_on_ampersands = 0
 			vim.g.vimtex_mappings_enabled = 1 -- These are the ones starting with <localleader>
