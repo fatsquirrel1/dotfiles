@@ -432,6 +432,25 @@ return {
 	}),
 	s(
 		{
+			trig = "emoji",
+			name = "Emoji",
+			wordTrig = true,
+			regTrig = false,
+			snippetType = "snippet",
+			condition = not_in_mathzone,
+		},
+		fmta(
+			[[
+  \emoji{<>}<>
+  ]],
+			{
+				i(1),
+				i(0),
+			}
+		)
+	),
+	s(
+		{
 			trig = "figure",
 			name = "Single Figure",
 			wordTrig = true,
@@ -597,6 +616,44 @@ return {
 			{ i(1), i(0) }
 		),
 		{ condition = not_in_mathzone }
+	),
+	s(
+		{
+			trig = ";ga",
+			name = "Gather",
+			wordTrig = true,
+			regTrig = false,
+			snippetType = "autosnippet",
+			condition = not_in_mathzone,
+		},
+		fmta(
+			[[
+  \begin{gather}
+    <>
+  \end{gather}
+  ]],
+			{
+				i(0),
+			}
+		)
+	),
+	s(
+		{
+			trig = ";gs",
+			name = "Gather*",
+			wordTrig = true,
+			regTrig = false,
+			snippetType = "autosnippet",
+			condition = not_in_mathzone,
+		},
+		fmta(
+			[[
+  \begin{gather*}
+    <>
+  \end{gather*}
+  ]],
+			{ i(0) }
+		)
 	),
 	s(
 		{ trig = "label", name = "Label", snippetType = "autosnippet" },

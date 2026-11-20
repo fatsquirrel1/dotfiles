@@ -731,37 +731,26 @@ return {
 		)
 	),
 	s(
-		{ trig = "ww", name = "Superscript", wordTrig = false, snippetType = "autosnippet" },
-		{ t("^{"), i(1), t("} ", i(0)) },
-		{ condition = in_mathzone }
-	),
-	s(
 		{
-			trig = "/([%w%-%+%#])",
-			name = "Auto-Subscript",
+			trig = "''",
+			name = "Superscript {}",
 			wordTrig = false,
-			regTrig = true,
+			regTrig = false,
 			snippetType = "autosnippet",
 			condition = in_mathzone,
 		},
 		fmta(
 			[[
-        _<> 
-      ]],
+  ^{<>} 
+  ]],
 			{
-				f(function(_, snip)
-					if snip.captures[1] == "#" then
-						return "\\#"
-					else
-						return snip.captures[1]
-					end
-				end),
+				i(1),
 			}
 		)
 	),
 	s(
 		{
-			trig = "'([%w%-%+%#])",
+			trig = "([%w%-%+%#])'",
 			name = "Auto-Superscript",
 			wordTrig = false,
 			regTrig = true,
@@ -787,8 +776,8 @@ return {
 	),
 	s(
 		{
-			trig = "ss",
-			name = "Subscript",
+			trig = "//", -- cannot be '', conflicts with primes
+			name = "Subscript {}",
 			wordTrig = false,
 			snippetType = "autosnippet",
 			condition = in_mathzone,
@@ -798,6 +787,30 @@ return {
     _{<>} 
     ]],
 			{ i(1) }
+		)
+	),
+	s(
+		{
+			trig = "([%w%-%+%#])/",
+			name = "Auto-Subscript",
+			wordTrig = false,
+			regTrig = true,
+			snippetType = "autosnippet",
+			condition = in_mathzone,
+		},
+		fmta(
+			[[
+        _<> 
+      ]],
+			{
+				f(function(_, snip)
+					if snip.captures[1] == "#" then
+						return "\\#"
+					else
+						return snip.captures[1]
+					end
+				end),
+			}
 		)
 	),
 	s(

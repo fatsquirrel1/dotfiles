@@ -139,4 +139,42 @@ return {
 		),
 		{ condition = in_mathzone }
 	),
+	s(
+		{
+			trig = "lrcl",
+			name = "Ceil Brackets",
+			wordTrig = true,
+			regTrig = false,
+			snippetType = "autosnippet",
+			condition = in_mathzone,
+		},
+		fmta(
+			[[
+  \lceil <> \rceil <>
+  ]],
+			{
+				i(1),
+				i(0),
+			}
+		)
+	),
+	s(
+		{
+			trig = "lrfl",
+			name = "Floor Brackets",
+			wordTrig = true,
+			regTrig = false,
+			snippetType = "autosnippet",
+			condition = in_mathzone,
+		},
+		fmta(
+			[[
+  \lfloor <> \rfloor <>
+  ]],
+			{
+				i(1),
+				i(0),
+			}
+		)
+	),
 }

@@ -30,4 +30,5 @@ if vim.g.colors_name == "everforest" then
 	vim.api.nvim_set_hl(0, "texSpecialChar", { fg = orange }) -- \\ and others
 	vim.api.nvim_set_hl(0, "SpecialChar", { fg = red }) -- & \\
 	vim.api.nvim_set_hl(0, "texMathZoneEnsured", { fg = red }) -- & \\
+	vim.api.nvim_set_hl(0, "texCmdEnvM", { fg = blue }) -- & in the pmatrix pmatrix
 end

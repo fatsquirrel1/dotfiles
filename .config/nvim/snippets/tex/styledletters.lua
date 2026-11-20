@@ -9,23 +9,31 @@ end
 
 return {
 	-- Super and subscript schortcuts
-	s({
-		trig = "(%a)(%d)",
-		name = "Letter Subscripts",
-		regTrig = true,
-		wordTrig = false,
-		snippetType = "autosnippet",
-		priority = 1000,
-	}, {
-		f(function(_, snip)
-			return snip.captures[1]
-		end),
-		t("_"),
-		f(function(_, snip)
-			return snip.captures[2]
-		end),
-		t(" "),
-	}, { condition = in_mathzone }),
+	-- s(
+	-- 	{
+	-- 		trig = "(%a)(%d)",
+	-- 		name = "Letter Subscripts",
+	-- 		regTrig = true,
+	-- 		wordTrig = false,
+	-- 		snippetType = "autosnippet",
+	-- 		priority = 1000,
+	-- 		condition = in_mathzone,
+	-- 	},
+	-- 	fmta(
+	-- 		[[
+	--      <>_<> <>
+	--    ]],
+	-- 		{
+	-- 			f(function(_, snip)
+	-- 				return snip.captures[1]
+	-- 			end),
+	-- 			f(function(_, snip)
+	-- 				return snip.captures[2]
+	-- 			end),
+	--        i(0)
+	-- 		}
+	-- 	)
+	-- ),
 	-- Real numbers shortcuts to the n
 	s({
 		trig = "RR",
