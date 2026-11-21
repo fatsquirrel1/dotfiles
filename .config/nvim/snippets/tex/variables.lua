@@ -150,6 +150,20 @@ return {
 		{ condition = in_mathzone }
 	),
 	s(
+		{
+			trig = "ell",
+			name = "Ell",
+			snippetType = "autosnippet",
+			condition = in_mathzone,
+		},
+		fmta(
+			[[
+    \ell 
+    ]],
+			{}
+		)
+	),
+	s(
 		{ trig = "kap", name = "Kappa", snippetType = "autosnippet" },
 		fmta(
 			[[

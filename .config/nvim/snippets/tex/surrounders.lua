@@ -115,14 +115,15 @@ return {
 			trig = "norm",
 			name = "Norm",
 			snippetType = "autosnippet",
+			condition = in_mathzone,
+			priority = 9999,
 		},
 		fmta(
 			[[
   \left\| <> \right\|_{<>}
   ]],
 			{ i(1), i(2) }
-		),
-		{ condition = in_mathzone }
+		)
 	),
 	s(
 		{

@@ -13,450 +13,40 @@ return {
 	-- Math symbols
 	s(
 		{
-			trig = "~=",
-			name = "Homeomorphism",
-			wordTrig = false,
-			regTrig = false,
+			trig = "qq",
+			name = "Quad",
 			snippetType = "autosnippet",
 			condition = in_mathzone,
 		},
-		fmta(
-			[[
-  \simeq 
-  ]],
-			{}
-		)
-	),
-	s(
-		{
-			trig = "~~",
-			name = "Sim tilde",
-			wordTrig = false,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-  \sim 
-  ]],
-			{}
-		)
-	),
-	s(
-		{
-			trig = "==",
-			name = "Equivalent",
-			wordTrig = true,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-  \equiv 
-  ]],
-			{}
-		)
-	),
-	s(
-		{
-			trig = ";E",
-			name = "Exists",
-			wordTrig = true,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-  \exists 
-  ]],
-			{}
-		)
-	),
-	s(
-		{ trig = "`o", name = "Circ", wordTrig = false, snippetType = "autosnippet" },
-		fmta(
-			[[
-    \circ 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "`p", name = "Partial", wordTrig = false, snippetType = "autosnippet" },
-		fmta(
-			[[
-    \partial 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{
-			trig = "`0",
-			name = "Empty Set",
-			wordTrig = true,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-          \emptyset 
-        ]],
-			{}
-		)
-	),
-	s(
-		{ trig = "seq", name = "Subset Eq", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \subseteq 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "sub", name = "Subset", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \subset 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "bcap", name = "Big Intersection", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \bigcap_{<>} 
-    ]],
-			{ i(1) }
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "cap", name = "Intersection", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \cap 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{
-			trig = "sqcap",
-			name = "Disjoint Intersection",
-			wordTrig = true,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-\sqcap  
-        ]],
-			{}
-		)
-	),
-	s(
-		{ trig = "bcup", name = "Big Union", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \bigcup_{<>} 
-    ]],
-			{ i(1) }
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{
-			trig = "res",
-			name = "Restriction",
-			desc = "Big vertical bar with subscript",
-			wordTrig = true,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-\big|_{<>} 
-        ]],
-			{ i(1) }
-		)
-	),
-	s(
-		{ trig = "cup", name = "Union", snippetType = "autosnippet" },
-		fmta(
-			[[
-\cup 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "ell", name = "Ell", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \ell 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{
-			trig = "sqcup",
-			name = "Disjoint Union",
-			wordTrig = true,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-\sqcup 
-        ]],
-			{}
-		)
-	),
-	s(
-		{ trig = "oo", name = "Infinity", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \infty 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{
-			trig = "in",
-			name = "In Set",
-			wordTrig = true,
-			snippetType = "autosnippet",
-			condition = in_mathzone * conds_expand.trigger_not_preceded_by("\\"),
-		},
-		fmta(
-			[[
-    \in 
-    ]],
-			{}
-		)
-	),
-	s(
-		{
-			trig = ";ox",
-			name = "OTimes",
-			wordTrig = false,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-          \otimes 
-        ]],
-			{}
-		)
-	),
-	s(
-		{
-			trig = ";x",
-			name = "Times",
-			wordTrig = false,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-          \times 
-        ]],
-			{}
-		)
-	),
-	s(
-		{ trig = "iff", name = "If And Only If", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \iff 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "Larrow", name = "Left Big Arrow (Implies)", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \Leftarrow 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "larrow", name = "Left Arrow (To)", snippetType = "snippet" },
-		fmta(
-			[[
-    \leftarrow 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "Rarrow", name = "Right Big Arrow ", snippetType = "snippet" },
-		fmta(
-			[[
-    \Rightarrow 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "rarrow", name = "Right Arrow ", snippetType = "snippet" },
-		fmta(
-			[[
-    \rightarrow 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "to", name = "To", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \to 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "mto", name = "Maps To", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \mapsto 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{
-			trig = ";%.",
-			name = "Cdot",
-			wordTrig = false,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-          \cdot 
-        ]],
-			{}
-		)
-	),
-	s(
-		{
-			trig = "embed",
-			name = "Embedding",
-			wordTrig = true,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-          \hookrightarrow 
-        ]],
-			{}
-		)
-	),
-	s( -- Weakly to
-		{ trig = "wto", name = "Right Harpoon Up", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \rightharpoonup 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{
-			trig = "...",
-			name = "Dots",
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-			priority = 9999,
-		},
-		fmta(
-			[[
-    \dots 
-    ]],
-			{}
-		)
-	),
-	s(
-		{ trig = "v..", name = "Vertical Dots", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \vdots 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "c..", name = "Center Dots", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \cdots 
-    ]],
-			{}
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "qq", name = "Quad", snippetType = "autosnippet" },
 		fmta(
 			[[
     \quad 
     ]],
 			{}
-		),
-		{ condition = in_mathzone }
+		)
 	),
 	s(
-		{ trig = "Loo", name = "L-infinity", snippetType = "autosnippet" },
+		{
+			trig = "Loo",
+			name = "L-infinity",
+			snippetType = "autosnippet",
+			condition = in_mathzone,
+		},
 		fmta(
 			[[
     {L^\infty} 
     ]],
 			{}
-		),
-		{ condition = in_mathzone }
+		)
 	),
 	-- Latex Math Environments
 	s(
-		{ trig = "matrix", name = "Matrix without Delimiters", snippetType = "snippet" },
+		{
+			trig = "matrix",
+			name = "Matrix without Delimiters",
+			snippetType = "snippet",
+			condition = in_mathzone,
+		},
 		fmta(
 			[[
     \begin{matrix}
@@ -464,11 +54,15 @@ return {
     \end{matrix}
     ]],
 			{ i(0) }
-		),
-		{ condition = in_mathzone }
+		)
 	),
 	s(
-		{ trig = "pmatrix", name = "Matrix with Parentheses", snippetType = "snippet" },
+		{
+			trig = "pmatrix",
+			name = "Matrix with Parentheses",
+			snippetType = "snippet",
+			condition = in_mathzone,
+		},
 		fmta(
 			[[
     \begin{pmatrix}
@@ -476,11 +70,15 @@ return {
     \end{pmatrix}
     ]],
 			{ i(0) }
-		),
-		{ condition = in_mathzone }
+		)
 	),
 	s(
-		{ trig = "bmatrix", name = "Matrix with Brackets", snippetType = "snippet" },
+		{
+			trig = "bmatrix",
+			name = "Matrix with Brackets",
+			snippetType = "snippet",
+			condition = in_mathzone,
+		},
 		fmta(
 			[[
     \begin{bmatrix}
@@ -488,11 +86,15 @@ return {
     \end{bmatrix}
     ]],
 			{ i(0) }
-		),
-		{ condition = in_mathzone }
+		)
 	),
 	s(
-		{ trig = "split", name = "Split Environment", snippetType = "snippet" },
+		{
+			trig = "split",
+			name = "Split Environment",
+			snippetType = "snippet",
+			condition = in_mathzone,
+		},
 		fmta(
 			[[
     \begin{split}
@@ -500,8 +102,7 @@ return {
     \end{split}
     ]],
 			{ i(0) }
-		),
-		{ condition = in_mathzone }
+		)
 	),
 	s(
 		{
@@ -524,37 +125,17 @@ return {
 	),
 	s(
 		{
-			trig = "supp",
-			name = "Support",
+			trig = "forall",
+			name = "Math For All",
 			snippetType = "autosnippet",
 			condition = in_mathzone,
 		},
 		fmta(
 			[[
-  \mathrm{supp} ( <> ) 
-  ]],
-			{ i(1) }
-		)
-	),
-	s(
-		{ trig = "divg", name = "Divergence", snippetType = "autosnippet" },
-		fmta(
-			[[
-  \divg (<>) 
-  ]],
-			{ i(1) }
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "forall", name = "Math For All", snippetType = "autosnippet" },
-		fmta(
-			[[
     \text{ for all } 
     ]],
 			{}
-		),
-		{ condition = in_mathzone }
+		)
 	),
 	s(
 		{
@@ -679,23 +260,21 @@ return {
 		)
 	),
 	s(
-		{ trig = "cases", name = "Math Cases", snippetType = "autosnippet", condition = in_mathzone },
-		{ t({ "\\begin{cases}", "  " }), i(0), t({ "", "\\end{cases}" }) }
-	),
-	s(
 		{
-			trig = "TT",
-			name = "Transpose",
-			wordTrig = false,
-			regTrig = false,
+			trig = "cases",
+			name = "Math Cases",
 			snippetType = "autosnippet",
 			condition = in_mathzone,
 		},
 		fmta(
 			[[
-  ^\top 
+  \begin{cases}
+    <>
+  \end{cases}
   ]],
-			{}
+			{
+				i(0),
+			}
 		)
 	),
 	s(
@@ -726,7 +305,7 @@ return {
 		fmta(
 			[[
   ^* 
-              ]],
+  ]],
 			{}
 		)
 	),
@@ -750,32 +329,6 @@ return {
 	),
 	s(
 		{
-			trig = "([%w%-%+%#])'",
-			name = "Auto-Superscript",
-			wordTrig = false,
-			regTrig = true,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-        ^<>
-      ]],
-			{
-				f(function(_, snip)
-					if snip.captures[1] == "#" then
-						return "\\#"
-					elseif snip.captures[1] == "o" then
-						return "o"
-					else
-						return snip.captures[1] .. " "
-					end
-				end),
-			}
-		)
-	),
-	s(
-		{
 			trig = "//", -- cannot be '', conflicts with primes
 			name = "Subscript {}",
 			wordTrig = false,
@@ -791,319 +344,6 @@ return {
 	),
 	s(
 		{
-			trig = "([%w%-%+%#])/",
-			name = "Auto-Subscript",
-			wordTrig = false,
-			regTrig = true,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-        _<> 
-      ]],
-			{
-				f(function(_, snip)
-					if snip.captures[1] == "#" then
-						return "\\#"
-					else
-						return snip.captures[1]
-					end
-				end),
-			}
-		)
-	),
-	s(
-		{ trig = ";d(%a)", name = "Integral dx", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-		fmta(
-			[[
-    \:\mathrm d <>
-    ]],
-			{ f(function(_, snip)
-				return snip.captures[1]
-			end) }
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{
-			trig = ";sq",
-			name = "Square Root",
-			wordTrig = false,
-			regTrig = true,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-          \sqrt{<>} 
-        ]],
-			{
-				i(1),
-				-- d(1, function(_, snip)
-				-- 	local input = snip.captures[1]
-				-- 	if input == "(" then
-				-- 		return sn(nil, { t("("), i(1), t(")") })
-				-- 	elseif input == "{" then
-				-- 		return sn(nil, { t("\\{"), i(1), t("\\}") })
-				-- 	elseif input == "[" then
-				-- 		return sn(nil, { t("["), i(1), t("]") })
-				-- 	else
-				-- 		return sn(nil, t(input))
-				-- 	end
-				-- end),
-			}
-		)
-	),
-	s(
-		{
-			trig = "ff(.)",
-			name = "fraction",
-			wordTrig = false,
-			regTrig = true,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-			priority = 9999,
-		},
-		fmta(
-			[[
-      \frac{<><>}{<>} 
-      ]],
-			{
-				d(1, function(_, snip)
-					local input = snip.captures[1]
-					if input == "(" then
-						return sn(nil, { t("("), i(1), t(")") })
-					elseif input == "{" then
-						return sn(nil, { t("\\{"), i(1), t("\\}") })
-					elseif input == "[" then
-						return sn(nil, { t("["), i(1), t("]") })
-					else
-						return sn(nil, t(input))
-					end
-				end),
-				i(2),
-				i(3),
-			}
-		)
-	),
-	s(
-		{ trig = "sum", name = "Sum", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \sum_{<>}^{<>} <>
-    ]],
-			{ i(1), i(2), i(0) }
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{
-			trig = "lim",
-			name = "Limit",
-			snippetType = "autosnippet",
-		},
-		fmta(
-			[[
-    \lim_{<>} <>
-    ]],
-			{ i(1), i(0) }
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "supr", name = "Supremum", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \sup_{<>} <>
-    ]],
-			{ i(1), i(0) }
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{
-			trig = "esup",
-			name = "Essential Supremum",
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-    \esssup_{<>} <>
-    ]],
-			{ i(1), i(0) }
-		)
-	),
-	s(
-		{
-			trig = "liin",
-			name = "liminf",
-			wordTrig = true,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-  \liminf_{<>} 
-  ]],
-			{
-				i(1),
-			}
-		)
-	),
-	s(
-		{
-			trig = "lisu",
-			name = "limsup",
-			wordTrig = true,
-			regTrig = false,
-			snippetType = "autosnippet",
-			condition = in_mathzone,
-		},
-		fmta(
-			[[
-  \limsup_{<>} 
-  ]],
-			{
-				i(1),
-			}
-		)
-	),
-	s(
-		{
-			trig = "ifm",
-			name = "Infimum",
-			snippetType = "autosnippet",
-			priority = 9999,
-		},
-		fmta(
-			[[
-    \inf_{<>} <>
-    ]],
-			{ i(1), i(0) }
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "lint", name = "Lebesgue Integral", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \int_{<>} <>
-    ]],
-			{ i(1, "\\Omega"), i(0) }
-		),
-		{ condition = in_mathzone }
-	),
-	s({
-		trig = "rint",
-		name = "Integral",
-		wordTrig = false,
-		regTrig = true,
-		snippetType = "autosnippet",
-		condition = in_mathzone,
-	}, fmta([[\int_{<>}^{<>} <>]], { i(1, "lower"), i(2, "upper"), i(0) })),
-	s(
-		{ trig = "ddx", name = "Derivative", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \frac{\mathrm d <> }{\mathrm d <>} 
-    ]],
-			{ i(1), i(2) }
-		),
-		{ condition = in_mathzone }
-	),
-
-	s(
-		{ trig = "ppx", name = "Partial Derivative", snippetType = "autosnippet" },
-		fmta(
-			[[
-    \frac{\partial <>}{\partial <>} <>
-    ]],
-			{ i(1), i(2), i(0) }
-		),
-		{ condition = in_mathzone }
-	),
-	s(
-		{
-			trig = "ol(.)",
-			name = "Overline",
-			wordTrig = false,
-			regTrig = true,
-			condition = function()
-				local current = vim.fn["vimtex#cmd#get_current"]()
-				return (in_mathzone() and current.name ~= "\\overline")
-			end,
-			snippetType = "autosnippet",
-		},
-		fmta(
-			[[
-\overline{<><>} 
-    ]],
-			{
-				f(function(_, snip)
-					return snip.captures[1]
-				end),
-				i(1),
-			}
-		)
-	),
-	s(
-		{
-			trig = "rm(%a)",
-			name = "Math Remove",
-			regTrig = true,
-			wordTrig = false,
-			snippetType = "autosnippet",
-			condition = function()
-				local current = vim.fn["vimtex#cmd#get_current"]()
-				if current.name == "\\mathrm" or not in_mathzone() then
-					return false
-				end
-				return true
-			end,
-		},
-		fmta(
-			[[
-    \mathrm{<><>} 
-    ]],
-			{
-				f(function(_, snip)
-					return snip.captures[1]
-				end),
-				i(1),
-			}
-		)
-	),
-	s(
-		{
-			trig = "(%a)rm",
-			name = "Math Remove (1)",
-			regTrig = true,
-			wordTrig = false,
-			snippetType = "autosnippet",
-			condition = function()
-				local current = vim.fn["vimtex#cmd#get_current"]()
-				if current.name == "\\mathrm" or not in_mathzone() then
-					return false
-				end
-				return true
-			end,
-		},
-		fmta(
-			[[
-    \mathrm{<>} 
-    ]],
-			{
-				f(function(_, snip)
-					return snip.captures[1]
-				end),
-			}
-		)
-	),
-	s(
-		{
 			trig = ";ub",
 			name = "Underbrace",
 			snippetType = "snippet",
@@ -1113,7 +353,10 @@ return {
 			[[
     \underbrace{<>}_{<>} 
     ]],
-			{ i(1, "math"), i(2, "under") }
+			{
+				i(1, "math"),
+				i(2, "under"),
+			}
 		)
 	),
 	s(
@@ -1127,7 +370,10 @@ return {
 			[[
     \overbrace{<>}^{<>} 
     ]],
-			{ i(1, "math"), i(2, "over") }
+			{
+				i(1, "math"),
+				i(2, "over"),
+			}
 		)
 	),
 }

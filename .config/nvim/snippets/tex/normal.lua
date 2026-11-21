@@ -14,29 +14,6 @@ return {
 	-- LaTeX environments
 	s(
 		{
-			trig = "([%a%$%}%]%)]) ([%-%.%,%:%?%!])",
-			name = "Autofix after delimiters and $",
-			wordTrig = false,
-			regTrig = true,
-			snippetType = "autosnippet",
-			condition = not_in_mathzone,
-		},
-		fmta(
-			[[
-          <><>
-        ]],
-			{
-				f(function(_, snip)
-					return snip.captures[1]
-				end),
-				f(function(_, snip)
-					return snip.captures[2]
-				end),
-			}
-		)
-	),
-	s(
-		{
 			trig = "tii(.)",
 			name = "Italics Font",
 			regTrig = true,
@@ -184,11 +161,13 @@ return {
 		},
 		fmta(
 			[[
-    \begin{itemize}[label = <>]
+    \begin{itemize}[label = "$\\bullet$" ]
       \item <>
     \end{itemize}
     ]],
-			{ i(1, "$\\bullet$"), i(0) }
+			{
+				i(0),
+			}
 		)
 	),
 	-- Math Theorems

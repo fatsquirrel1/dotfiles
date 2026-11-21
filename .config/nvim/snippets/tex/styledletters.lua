@@ -8,39 +8,20 @@ local in_mathzone = function()
 end
 
 return {
-	-- Super and subscript schortcuts
-	-- s(
-	-- 	{
-	-- 		trig = "(%a)(%d)",
-	-- 		name = "Letter Subscripts",
-	-- 		regTrig = true,
-	-- 		wordTrig = false,
-	-- 		snippetType = "autosnippet",
-	-- 		priority = 1000,
-	-- 		condition = in_mathzone,
-	-- 	},
-	-- 	fmta(
-	-- 		[[
-	--      <>_<> <>
-	--    ]],
-	-- 		{
-	-- 			f(function(_, snip)
-	-- 				return snip.captures[1]
-	-- 			end),
-	-- 			f(function(_, snip)
-	-- 				return snip.captures[2]
-	-- 			end),
-	--        i(0)
-	-- 		}
-	-- 	)
-	-- ),
 	-- Real numbers shortcuts to the n
-	s({
-		trig = "RR",
-		name = "Real Numbers",
-		snippetType = "autosnippet",
-		condition = in_mathzone,
-	}, fmta([[\mathbb R]], {})),
+	s(
+		{
+			trig = "RR",
+			name = "Real Numbers",
+			snippetType = "autosnippet",
+			condition = in_mathzone,
+		},
+		fmta(
+			[[
+  \mathbb R]],
+			{}
+		)
+	),
 	s(
 		{
 			trig = "R([nmkd%d])",
@@ -63,24 +44,32 @@ return {
 	),
 	-- Calligraphy, Bold , Blackboard font etc.
 	s(
-		{ trig = "mathfrak", name = "Math Fraktur", snippetType = "snippet" },
+		{
+			trig = "mathfrak",
+			name = "Math Fraktur",
+			snippetType = "snippet",
+			condition = in_mathzone,
+		},
 		fmta(
 			[[
     \mathfrak{<>} <>
     ]],
 			{ i(1), i(0) }
-		),
-		{ condition = in_mathzone }
+		)
 	),
 	s(
-		{ trig = "mathscr", name = "Math Script", snippetType = "snippet" },
+		{
+			trig = "mathscr",
+			name = "Math Script",
+			snippetType = "snippet",
+			condition = in_mathzone,
+		},
 		fmta(
 			[[
     \mathscr{<>} 
     ]],
 			{ i(1) }
-		),
-		{ condition = in_mathzone }
+		)
 	),
 	s(
 		{

@@ -78,7 +78,14 @@ wk.add({
 		desc = "Notification History",
 		icon = { icon = "󰍪 " },
 	},
-	{ "<leader>z", "lua require('undotree').toggle()", desc = "Undotree", icon = { icon = "󰕌", color = "grey" } },
+	{
+		"<leader>z",
+		function()
+			require("undotree").toggle()
+		end,
+		desc = "Undotree",
+		icon = { icon = "󰕌", color = "grey" },
+	},
 	--
 	--
 	--
@@ -271,6 +278,23 @@ wk.add({
 	{ "<leader>cq", "q", desc = "Define Macro" }, -- Define a keymap
 	{ "<leader>cl", "<cmd>Lazy<cr>", desc = "Lazy", icon = { icon = "󰒲 " } }, -- Define a keymap
 	{ "<leader>ch", "<cmd>checkhealth<cr>", desc = "Check Health (all)", icon = { icon = "󰒲 " } }, -- Define a keymap
+	{
+		"<leader>cf",
+		function()
+			require("conform").format({}, function(err, did_edit)
+				if err then
+					vim.notify("Format failed: " .. tostring(err), vim.log.levels.ERROR, { title = "Conform" })
+				elseif did_edit then
+					vim.notify("Buffer formatted", vim.log.levels.INFO, { title = "Conform" })
+				else
+					vim.notify("No changes needed", vim.log.levels.INFO, { title = "Conform" })
+				end
+			end)
+		end,
+		desc = "Format buffer",
+		icon = { icon = "󰉼 " },
+		mode = { "n", "v" },
+	},
 	--
 	--
 	--
