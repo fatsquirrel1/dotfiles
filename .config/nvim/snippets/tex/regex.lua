@@ -105,7 +105,7 @@ return {
 	),
 	s(
 		{
-			trig = "ff(.)",
+			trig = "ff",
 			name = "fraction",
 			wordTrig = false,
 			regTrig = true,
@@ -115,23 +115,11 @@ return {
 		},
 		fmta(
 			[[
-      \frac{<><>}{<>} 
+      \frac{<>}{<>} 
       ]],
 			{
-				d(1, function(_, snip)
-					local input = snip.captures[1]
-					if input == "(" then
-						return sn(nil, { t("("), i(1), t(")") })
-					elseif input == "{" then
-						return sn(nil, { t("\\{"), i(1), t("\\}") })
-					elseif input == "[" then
-						return sn(nil, { t("["), i(1), t("]") })
-					else
-						return sn(nil, t(input))
-					end
-				end),
+				i(1),
 				i(2),
-				i(3),
 			}
 		)
 	),

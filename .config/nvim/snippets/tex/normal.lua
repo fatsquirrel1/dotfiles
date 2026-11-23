@@ -46,6 +46,39 @@ return {
 	),
 	s(
 		{
+			trig = "tsc(.)",
+			name = "Small Caps",
+			description = "Text with small caps environment",
+			regTrig = true,
+			wordTrig = false,
+			snippetType = "autosnippet",
+			condition = function()
+				local current = vim.fn["vimtex#cmd#get_current"]()
+				if current.name == "\\textsc" or in_mathzone() then
+					return false
+				end
+				return true
+			end,
+			priority = 9999,
+		},
+		fmta(
+			[[
+    \textsc{<>} 
+    ]],
+			{
+				d(1, function(_, snip)
+					local input = snip.captures[1]
+					if input == "(" then
+						return sn(nil, { t("("), i(1), t(")") })
+					else
+						return sn(nil, { t(input), i(1) })
+					end
+				end),
+			}
+		)
+	),
+	s(
+		{
 			trig = "tbb(.)",
 			name = "Bold Font",
 			regTrig = true,

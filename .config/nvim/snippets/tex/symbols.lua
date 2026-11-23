@@ -44,6 +44,23 @@ return {
 	),
 	s(
 		{
+			trig = ";\\",
+			name = "Set Minus",
+			description = "Set Minus",
+			wordTrig = true,
+			regTrig = false,
+			snippetType = "autosnippet",
+			condition = in_mathzone,
+		},
+		fmta(
+			[[
+      \setminus 
+  ]],
+			{}
+		)
+	),
+	s(
+		{
 			trig = "seq",
 			name = "Subset Eq",
 			snippetType = "autosnippet",

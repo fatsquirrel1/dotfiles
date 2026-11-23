@@ -14,8 +14,10 @@ vim.keymap.set("i", "<C-BS>", "<C-w>", { noremap = true })
 vim.keymap.set("i", "<C-Del>", "<esc>ldei", { noremap = true })
 
 -- Ctrl + S to save
-vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { noremap = true }) -- not with esc
-vim.keymap.set("i", "<C-s>", "<cmd>w<CR><esc>", { noremap = true }) -- with esc key
+wk.add({
+	mode = { "i", "n" },
+	{ "<c-s>", "<cmd>w<CR><esc>", noremap = true, desc = "Save", icon = { icon = "" } },
+})
 
 -- Shift/Ctrl + Enter to add a new line
 vim.keymap.set("i", "<C-CR>", "<esc>o")
@@ -50,10 +52,10 @@ vim.api.nvim_set_keymap("s", "<C-p>", "<Plug>luasnip-prev-choice", {})
 -- Window Navigation up down left right
 wk.add({
 	mode = { "i", "t", "n" },
-	{ "<c-j>", "<cmd>winc j<cr><esc>" },
-	{ "<c-k>", "<cmd>winc k<cr><esc>" },
-	{ "<c-l>", "<cmd>winc l<cr><esc>" },
-	{ "<c-h>", "<cmd>winc h<cr><esc>" },
+	{ "<c-j>", "<cmd>winc j<cr><esc>", desc = "Focus Win Above" },
+	{ "<c-k>", "<cmd>winc k<cr><esc>", desc = "Focus Win Below" },
+	{ "<c-l>", "<cmd>winc l<cr><esc>", desc = "Focus Win Right" },
+	{ "<c-h>", "<cmd>winc h<cr><esc>", desc = "Focus Win Left" },
 })
 
 -- WHICHKEY COLORS: `azure`, `blue`, `cyan`, `green`, `grey`, `orange`, `purple`, `red`, `yellow`
