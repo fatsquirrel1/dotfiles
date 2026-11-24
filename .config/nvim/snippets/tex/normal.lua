@@ -11,13 +11,80 @@ local in_mathzone = function()
 end
 
 return {
+	-- Document initialization
+	s(
+		{
+			trig = "mainfile",
+			name = "Main File",
+			description = "Main file initialization commands",
+			wordTrig = true,
+			regTrig = false,
+			snippetType = "snippet",
+			condition = not_in_mathzone,
+		},
+		fmta(
+			[[
+  %! TeX program = lualatex
+  \input{preamble/packages.tex}
+  \input{preamble/operators.tex}
+  \input{preamble/emojicommands.tex} % change to commands.tex to compile without emojis
+
+  \title{<>}
+  \author{<>}
+  \date{\parbox{\linewidth}{\centering%
+    \today\endgraf\bigskip
+    \warn \textit{This document and is not meant to be publicly available} \warn}\endgraf 
+    \emoji{stop-sign} \textbf{DO NOT SHARE} \emoji{stop-sign}}
+
+  &\addbibresource{}
+
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+
+  \begin{document}
+  % \maketitle
+  \tableofcontents
+  \pagestyle{fancy}
+  \fancyhead{}
+
+  %\subfile{src/}
+
+  \end{document}
+  ]],
+			{
+				i(1, "title"),
+				i(2, "Nathanael Stalter"),
+			}
+		)
+	),
+	s(
+		{
+			trig = "subfile",
+			name = "Subfile Preamble",
+			wordTrig = true,
+			regTrig = false,
+			snippetType = "snippet",
+			condition = not_in_mathzone,
+		},
+		fmta(
+			[[
+  \documentclass[../\currfilename]{subfile}
+  \begin{document}
+  <>
+  \end{document}
+  ]],
+			{
+				i(0),
+			}
+		)
+	),
 	-- LaTeX environments
 	s(
 		{
-			trig = "tii(.)",
+			trig = "ii(.)",
 			name = "Italics Font",
 			regTrig = true,
-			wordTrig = false,
+			wordTrig = true,
 			snippetType = "autosnippet",
 			condition = function()
 				local current = vim.fn["vimtex#cmd#get_current"]()
@@ -79,10 +146,10 @@ return {
 	),
 	s(
 		{
-			trig = "tbb(.)",
+			trig = "bb(.)",
 			name = "Bold Font",
 			regTrig = true,
-			wordTrig = false,
+			wordTrig = true,
 			snippetType = "autosnippet",
 			condition = function()
 				local current = vim.fn["vimtex#cmd#get_current"]()

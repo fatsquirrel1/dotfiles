@@ -17,7 +17,10 @@ return {
 			wordTrig = false,
 			regTrig = true,
 			snippetType = "autosnippet",
-			condition = not_in_mathzone,
+			condition = function()
+				return not in_mathzone()
+			end,
+			show_condition = false,
 		},
 		fmta(
 			[[
@@ -41,6 +44,7 @@ return {
 			regTrig = true,
 			snippetType = "autosnippet",
 			condition = in_mathzone,
+			show_condition = false,
 		},
 		fmta(
 			[[
@@ -57,6 +61,39 @@ return {
 					end
 				end),
 			}
+		)
+	),
+	s(
+		{
+			trig = '"',
+			name = "Superscript {}",
+			wordTrig = false,
+			regTrig = false,
+			snippetType = "autosnippet",
+			condition = in_mathzone,
+		},
+		fmta(
+			[[
+  ^{<>} 
+  ]],
+			{
+				i(1),
+			}
+		)
+	),
+	s(
+		{
+			trig = "?", -- cannot be '', conflicts with primes
+			name = "Subscript {}",
+			wordTrig = false,
+			snippetType = "autosnippet",
+			condition = in_mathzone,
+		},
+		fmta(
+			[[
+    _{<>} 
+    ]],
+			{ i(1) }
 		)
 	),
 	s(
@@ -91,6 +128,7 @@ return {
 			regTrig = true,
 			snippetType = "autosnippet",
 			condition = in_mathzone,
+			show_condition = false,
 		},
 		fmta(
 			[[

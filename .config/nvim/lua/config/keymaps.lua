@@ -281,7 +281,7 @@ wk.add({
 	{ "<leader>cl", "<cmd>Lazy<cr>", desc = "Lazy", icon = { icon = "󰒲 " } }, -- Define a keymap
 	{ "<leader>ch", "<cmd>checkhealth<cr>", desc = "Check Health (all)", icon = { icon = "󰒲 " } }, -- Define a keymap
 	{
-		"<leader>cf",
+		"<localleader>f",
 		function()
 			require("conform").format({}, function(err, did_edit)
 				if err then

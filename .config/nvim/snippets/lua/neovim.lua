@@ -5,25 +5,26 @@ return {
 		{ trig = "snippet", name = "Snippet", snippetType = "snippet" },
 		fmta(
 			[=[
-s(
-{
-trig = "<>",
-name = "<>",
-wordTrig = <>,
-regTrig = <>,
-snippetType = "<>snippet",
-condition = <>in_mathzone
-},
-fmta(
-[[
-<>
-]],
-{
-<>
-}
-)
-),
-]=],
+						s(
+						{
+								trig = "<>",
+								name = "<>",
+								wordTrig = <>,
+								regTrig = <>,
+								snippetType = "<>snippet",
+								condition = <>in_mathzone,
+								show_condition = <>,
+							},
+						fmta(
+						[[
+										<>
+									]],
+						{
+								<>
+							}
+						)
+						),
+					]=],
 			{
 				i(1, "trigger"),
 				i(2, "name"),
@@ -31,31 +32,11 @@ fmta(
 				c(4, { t("false"), t("true") }),
 				c(5, { t("auto"), t("") }),
 				c(6, { t(""), t("not_") }),
-				i(7, "snippet"),
-				c(8, { t(""), t("i(0)") }),
+				c(7, { t("true"), t("false") }),
+				i(8, "snippet"),
+				c(9, { t(""), t("i(0)") }),
 			},
 			{ delimiters = "<>" }
-		)
-	),
-	s(
-		{
-			trig = "keymap",
-			name = "Set New Keymap",
-			wordTrig = true,
-			regTrig = false,
-			snippetType = "snippet",
-		},
-		fmta(
-			[[
-vim.keymap.set( "<>" , "<>", "<>" , { desc = "<>" }) -- <>
-        ]],
-			{
-				i(1, "nisv"),
-				i(2, "trigger"),
-				i(3, "keymap action"),
-				i(4, "description"),
-				i(5, "comment for config"),
-			}
 		)
 	),
 }
